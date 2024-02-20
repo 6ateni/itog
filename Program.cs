@@ -1,5 +1,8 @@
 ﻿string[] str = { "Hello", "2", "world", ":-)" };
 string[] newStr = NewArray(str);
+string firstArray = PrintArray(str);
+string secondArray = PrintArray(newStr);
+Console.WriteLine(firstArray + " -> " + secondArray);
 
 
 int СountingСharsGivenSize(string[] str)
@@ -29,4 +32,20 @@ string[] NewArray(string[] str)
         }
     }
     return newStr;
+}
+
+string PrintArray(string[] str)
+{
+    string stringArray = "[";
+    for (int i = 0; i < str.Length; i++)
+    {
+        if (i == str.Length - 1)
+        {
+            stringArray += $"\"{str[i]}\"";
+            break;
+        }
+        stringArray += ($"\"{str[i]}\", ");
+    }
+    stringArray += "]";
+    return stringArray;
 }
